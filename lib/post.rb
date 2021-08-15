@@ -23,6 +23,4 @@ class Post
     return current_path + "/" + file_name
   end
 
-
-  end
 end

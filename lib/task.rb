@@ -10,4 +10,5 @@ class Task < Post
 
   def to_strings
   end
+
 end
