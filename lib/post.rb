@@ -1,5 +1,13 @@
 class Post
 
+  def self.post_type
+    [Memo, Task, Link]
+  end
+
+  def self.create(type_index)
+    return post_type[type_index].new
+  end
+
   def initialize
     @created_at = Time.now
     @text = nil
@@ -12,9 +20,10 @@ class Post
   end
 
   def save
-    file = File.new(file_path, "w: UTF-8")
+    file = File.new(file_path, 'w:UTF-8')
     to_strings.each {|item| file.puts(item)}
     file.close
+    puts "Ваша запись успешно сохранена!!!"
   end
 
   def file_path
